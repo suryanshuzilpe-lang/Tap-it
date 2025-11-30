@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tap It! - The Ultimate Tapping Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Tap It!</h1>
+        <p>How fast can you tap?</p>
+    </header>
+
+    <main class="game-container">
+        <div class="score-display">
+            <h2>Taps: <span id="tap-count">0</span></h2>
+        </div>
+        
+        <button id="tap-button" class="tap-area">
+            Tap Me!
+        </button>
+
+        <div class="controls">
+            <button id="reset-button">Reset</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Tap It Project | Developed for the web</p>
+    </footer>
+
+    <script>
+        // Placeholder JavaScript logic
+        const tapButton = document.getElementById('tap-button');
+        const tapCount = document.getElementById('tap-count');
+        const resetButton = document.getElementById('reset-button');
+        let count = 0;
+
+        tapButton.addEventListener('click', () => {
+            count++;
+            tapCount.textContent = count;
+            tapButton.classList.add('tapped');
+            setTimeout(() => tapButton.classList.remove('tapped'), 100);
+        });
+
+        resetButton.addEventListener('click', () => {
+            count = 0;
+            tapCount.textContent = count;
+        });
+    </script>
+</body>
+</html>
